@@ -1,5 +1,8 @@
 ## Code Provider - Proof of Contribution Table
 
+> [!IMPORTANT]  
+> ### This table is closed for adding entries. Contributions added here won't be rewarded.
+
 This table is historical for snapshot 1 and 2.
 Please direct all new pull requests to the current [snapshot 3 file](https://github.com/MorpheusAIs/Docs/blob/main/Contributions/Code%20-%20Proof_Of_ContributionSnapshot3.md).
 
@@ -8,9 +11,18 @@ Please direct all new pull requests to the current [snapshot 3 file](https://git
 **[The Code Contributors Weights Guide](https://github.com/MorpheusAIs/Docs/blob/main/Guides/Code%20Contributor%20Weights%20Guide.md)**.
 
 ## Snapshot Timelines and Implied Value of a Weight
-**Snapshot 1.** September 2nd 2023 to February 8th 2024 Theoretical Implied Value of a Weight = $50 USD per Weight (price is unknown 1MOR = 1MOR). 
-**Snapshot 2.** February 8th to March 8th 2024 Theoretical Implied Value of a Weight = $400 USD per Weight (price is unknown 1MOR = 1MOR).  
-**Snapshot 3.** March 8th to April 8th 2024 Theoretical Implied Value of a Weight = $641 USD per Weight (price is unknown 1MOR = 1MOR).
+**Snapshot 1.**  
+September 2nd 2023 to February 8th 2024  
+Theoretical Implied Value of a Weight = $0.025 USD per Weight (price is unknown 1MOR = 1MOR).   
+
+**Snapshot 2.**  
+February 8th to March 8th 2024  
+Theoretical Implied Value of a Weight = $0.20 USD per Weight (price is unknown 1MOR = 1MOR).  
+
+**Snapshot 3.**  
+March 8th to April 8th 2024  
+Theoretical Implied Value of a Weight = $ 0.407 USD per Weight (price is unknown 1MOR = 1MOR). 
+
 
 ## Structuring your Code Contributions
 
@@ -40,6 +52,7 @@ Please include the "pipe" `|` symbol correctly as seen above so your contributio
 
 | Wallet Address | Link to Work | Weight of Value Contributed (Weights) | Description of Contribution                                                                                                                                                                                                                           |
 | -------------- | ------------ |----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 0xA6D60da9ed25509092bA912b523F812E109F3C9c | https://github.com/MorpheusAIs/pwa/pull/2 | 40 | Converted mor.org to PWA |
 | 0x75AdC3921610A67538538Dd5d06a4f4a66108583 | https://github.com/MorpheusAIs/Docs/pull/1 | 5 | Moved documents from Morpheus to Docs repo |
 | 0x3a3539aDDCB51a5b1050A3Ca673fBf3d0fb7b005 | Farcaster setup | 2 | Setting up and subscribing to a Farcaster channel - https://warpcast.com/~/channel/mor|
 | 0x49B6123A10B022D5847335d5ad32eB198a14bc58 | https://github.com/MorpheusAIs/Docs/pull/44 | 3 | Proofread and edit key docs |
@@ -184,8 +197,6 @@ Please include the "pipe" `|` symbol correctly as seen above so your contributio
 | 0x76c22534B60B5dbbe16e9Fc0325435fd68550Bf3 | [Proof of Capital Dune Dashboard](https://dune.com/syncracy/morpheus) | 1 | A Dune dashboard to track the progress of Morpheus fair launch |
 | 0x63e55D70e546Bf5276F13888058160a5583D2BD1 | [Overview of Morpheus Fair Launch Dune Dashboard](https://dune.com/binarybuddha/morpheus-fair-launch) | 1 | A dashboard that gives an overview of the stETH stakers on Morpheus Protocol, giving an insight of the protocol's fair launch traction. The metrics include number of unique depositors, withdrawers, net stakers and their corresponding amount in stETH and USD |
 | 0xCC5e733cB2E7a59EFC5463575EfC3584D5922486 | https://github.com/MorpheusAIs/Morpheus/tree/0.0.5, https://github.com/MorpheusAIs/Morpheus/blob/006-alpha-fix-2/Contributions/Code%20-%20Proof_Of_Contribution.md | 860 | 0.0.5 build, test, package, sign, publish, diagramming, instructions, 0.0.6-alpha-fix-2 |
-| 0x1461F599ecCeC516cf4704253Ab26dF69003439E | https://github.com/MorpheusAIs/Morpheus/pull/321 @Bullfuencer| 25 | White paper translated to Italian including pictures.
-| 0x80CdcF57f42C6BfB429b245d798ee46b9F71Edea | https://github.com/MorpheusAIs/Morpheus/pull/517 | 70 | First Smart Agent |
 | 0x80CdcF57f42C6BfB429b245d798ee46b9F71Edea | https://github.com/MorpheusAIs/Morpheus/pull/517 | 70 | First Smart Agent |
 | 0xFa126C09DB44851BFa6bD9D70016f499fdc5586D | [https://github.com/MorpheusAIs/Morpheus/pull/522](https://github.com/MorpheusAIs/Morpheus/pull/522) | 8 | UI style adjustments |
 | 0xbac0086453F04Abc25539A1d5D90f797419F9842 | https://github.com/MorpheusAIs/Morpheus/pull/486 | 120 | Fixing the local morpheus client, ollama spawning, asar packaging, Electron CSP |
@@ -250,11 +261,21 @@ Please include the "pipe" `|` symbol correctly as seen above so your contributio
 | 0x8ed1221d896a32a1a37a4c6b67577e7eaa67b2d3 | https://github.com/MorpheusAIs/Docs/blob/main/!KEYDOCS%20README%20FIRST!/WhitePaper.md | 3 | Helped construct tokenomics and mechanism design for Morpheus |
 | 0x3476ee81BA812D56b571bCc2e6122De698084E15 | https://github.com/MorpheusAIs/Docs/pull/19 , https://github.com/MorpheusAIs/Docs/pull/22 , https://github.com/MorpheusAIs/MRC , https://github.com/MorpheusAIs/Docs/blob/main/!KEYDOCS%20README%20FIRST!/Fair%20Price%20Discovery.md , https://docs.google.com/document/d/1uMvRT_WA1KqJAkoHbs7fxDkMtYrcdprXrbOmssEXtGg/edit , MorStats.info| 52 | Updated MorStats.info with stETH withdrawals, yield, resources, and price analytics. Proofread, collaborated, and contributed to the following documents: Fair Price Discovery, Fair Launch Process, Waterloo Community Model, Code Contributor Weights Guide|
 | 0x8d7D04B3679074ff3FBE64f92b24aDB31a602b35 | https://mor.software, https://github.com/MorpheusAIs/Morpheus/issues/106, https://github.com/MorpheusAIs/Morpheus/issues/633, https://github.com/MorpheusAIs/Morpheus/pull/606, https://github.com/MorpheusAIs/Morpheus/pull/576, https://github.com/MorpheusAIs/Morpheus/pull/618, https://github.com/MorpheusAIs/Morpheus/pull/527  | 163 | mor.software MVP, issues and pull requests, onbarding |
-| 0x0435E96350b139A64A67A74c88812F7aA6e1A57f | https://morpheus-data.vercel.app/, https://github.com/Nitradoo/morpheus-data | 5 | developing the dashboard 1/2 devs. |
-| 0xa884B8Ac0eD93fBB39155754fAC4B4C898CEAD96 | https://www.reddit.com/r/MorpheusAIs/ | 2 | Setting up the reddit community and first post with graphics
-| 0xa884B8Ac0eD93fBB39155754fAC4B4C898CEAD96 | https://www.reddit.com/r/MorpheusAIs/ | 2 | Kept the reddit community updated on the latest info for the last week.
+| 0x0435E96350b139A64A67A74c88812F7aA6e1A57f | https://morpheus-data.vercel.app/, https://github.com/Nitradoo/morpheus-data | 5 | developing the dashboard 1/2 devs. (Snapshot 3) | 
+| 0xa884B8Ac0eD93fBB39155754fAC4B4C898CEAD96 | https://www.reddit.com/r/MorpheusAIs/ | 2 | Setting up the reddit community and first post with graphics (Snapshot 3) |
+| 0xa884B8Ac0eD93fBB39155754fAC4B4C898CEAD96 | https://www.reddit.com/r/MorpheusAIs/ | 2 | Kept the reddit community updated on the latest info for the last week. (Snapshot 3) |
 | 0x6b11a53f72503CfE069818c96f2173506E89B2d0 | https://morpheus-data.vercel.app/, https://github.com/Nitradoo/morpheus-data | 5 | Made the morpheus general dashboard |
 | 0x70305F11944ba4622ce0AE2e4D9D8023f54CeA85 | https://github.com/MorpheusAIs/Lite-Client | 5 | 006 Win build development and testing, Electronjs templating and GH Actions|
 | 0x8388298D1B9601CE2da78127605570b4878f2cFa | Security Repo Implementation Request | 8 | Security Advisory Consult for February. Helping with multi-sig setup and security best practices to prepare for deployment and third-party audits |
 | 0x8388298D1B9601CE2da78127605570b4878f2cFa | Security Repo Implementation Request | 5 | Security Advisory Consult for March. Review merge requests security for Moroft.SOL, Solana Integration, and stETH to wETH upgrade. |
-| 0x0Ba7a85Af6323686a1fE29423bd72c2ce81Fe923 | TigerBuidl | 6 | Building FAQ for Morpheus Community |
+| 0xe27458C8Bb3D9Bf298BC8FE47F0Cfab40bc45963 | https://github.com/MorpheusAIs/Morpheus/commit/5d399dd308d60931510fb5e91131a5358a757ebc, https://github.com/MorpheusAIs/Morpheus/commit/0452d6f6123df411d10bbaba694bf8d1dc289170, https://github.com/MorpheusAIs/Morpheus/commit/0870da9b5f69c77968834a408eba9958c2ce2bf0,  https://github.com/MorpheusAIs/Morpheus/commit/17a623bd46cb54887a9da6c808f3ea5506ce01b3,  https://github.com/jabo38/morpheus-images/issues/4, https://github.com/MorpheusAIs/Docs/blob/main/!KEYDOCS%20README%20FIRST!/Top%2010%20Reasons%20People%20Get%20Excited%20About%20Morpheus.md |	20 |	Testing 0.0.1-0.0.6 clients and reporting bugs to devs. Editing multiple edits in white paper and other papers. Helping with writing of tutorial for manually deploying stETH via Etherscan on launch day for alternate way to deposit. Testing txs pre launch and launch day with devs. Draft on answering questions for community events. Volunteering 3 days at ETH Denver.|
+| 0x298a247D7a265BF9e904545209254e4777e531C3 | https://github.com/MorpheusAIs/Docs/blob/main/!KEYDOCS%20README%20FIRST!/Code%20Contributor%20Best%20Practices.md | 25 | Implementations 4 and 6. Adding best practices for MOR20 | 
+| 0x298a247D7a265BF9e904545209254e4777e531C3 | MorpheusAIs/Morpheus#597 | 2 | Spell check and natural language corrections (Snapshot 2) | 
+| 0x90B77ba59889A1EC737B4eBC8C78B69f7578BB46 | https://github.com/MorpheusAIs/Docs/blob/main/!KEYDOCS%20README%20FIRST!/TechnoCapitalMachineTCM.md | 5 | Implementation 4; Onboarding of project 
+| 0x1A9D00590E6e781A450F03A8BbEca052909C2f5A | https://discord.com/channels/1151741790408429580/1200174062547247187/1205522663020306543 | 58 | Implementation 6; Morpheus Lens Profile Contribution to the Project | 
+
+
+> [!IMPORTANT]  
+> ### This table is closed for adding entries. Contributions added here won't be rewarded.
+
+

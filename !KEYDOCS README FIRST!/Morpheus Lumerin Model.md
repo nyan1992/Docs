@@ -4,7 +4,7 @@
 
 ## Summary
 
-The Morpheus Lumerin Model utilizes the Lumerin protocol routing pattern to create a peer-to-peer, decentralized, and anonymous ecosystem for connecting AI users with AI model and agent compute providers. This model seeks to incorporate aspects of the original Morpheus white paper and yellow paper as well as core concepts from the [Yellowstone Compute Model](https://github.com/MorpheusAIs/Docs/blob/main/!KEYDOCS%20README%20FIRST!/Yellowstone%20Compute%20Model.md) and Lake Travis System.
+The Morpheus Lumerin Model utilizes the Lumerin protocol routing pattern to create a peer-to-peer, decentralized, and anonymous ecosystem for connecting AI users with AI model and agent compute providers. This model seeks to incorporate aspects of the original Morpheus white paper and yellow paper as well as core concepts from the [Yellowstone Compute Model](https://github.com/MorpheusAIs/Docs/blob/main/!KEYDOCS%20README%20FIRST!/Yellowstone%20Compute%20Model.md) and [Lake Travis System](https://github.com/MorpheusAIs/MRC/blob/main/IN%20PROGRESS/MRC25.md).
 
 The following proposal will explain the key design principles that have been incorporated as well as outline each part of the on-chain ecosystem model, client-side node, and underlying protocol.
 
@@ -40,9 +40,6 @@ Ensuring that the prompt and inference data stream seamlessly between the user a
 
 For providers, protecting their IP address or URL endpoint is paramount to maintaining the integrity and security of the Morpheus network. Utilizing proxies, load balancers, VPNs, or other obfuscation methods helps shield their digital footprint, making it significantly more challenging for malicious actors to target or exploit the system. Similarly, ensuring user nodes are only visible to providers during active sessions enhances privacy and security for all users. This layer of anonymity is crucial; it prevents potential attackers from easily mapping the network or identifying vulnerable points for attacks. Together, these strategies form a robust defense mechanism, bolstering the network's resilience against cyber threats and preserving the confidentiality and integrity of the data flowing through it.
 
-
-
-
 ## Ecosystem Model
 
 The Morpheus ecosystem will consist of several on-chain and off-chain systems. On-chain systems can be divided into two categories: capital systems and compute systems. Capital systems are deployed on blockchains for the purpose of locking up capital in exchange for minted MOR tokens while compute systems are deployed on blockchains for the purposes of creating an AI model and agent market.
@@ -53,7 +50,7 @@ The Morpheus ecosystem will consist of several on-chain and off-chain systems. O
 ### Layer 1 Contracts
 
 #### **Ecosystem Registry**
-The ecosystem registry is a reference list of all official Morpherus contracts deployed on that blockchain as well as a list of ecosystem registries deployed on other blockchains.
+The ecosystem registry is a reference list of all official Morpheus contracts deployed on that blockchain as well as a list of ecosystem registries deployed on other blockchains.
 
 ##### Variables
 
@@ -106,7 +103,7 @@ Pool 1 started February 8th, 2024 at midnight GMT.  \
 It mints 3,456 MOR every 24 hours to the code tranche. \
 Minting amount decreases by [0.59255872824](https://etherscan.io/unitconverter?wei=592558728240000000) MOR every 24 hours. \
 Users accrue MOR daily in ratio to their weights against total attributed weight. \
-User accrued MOR is available to claim after May 8th, 2024 at midnight GMT. \
+User accrued MOR is available to claim after May 8th, 2024 at midnight GMT.
 
 3. Community Tranche (Pool 2) \
  \
@@ -114,7 +111,7 @@ Pool 2 started February 8th, 2024 at midnight GMT.  \
 It mints 3,456 MOR every 24 hours to the community tranche. \
 Minting amount decreases by [0.59255872824](https://etherscan.io/unitconverter?wei=592558728240000000) MOR every 24 hours. \
 Users accrue MOR daily in ratio to their weights against total attributed weight. \
-User accrued MOR is available to claim after May 8th, 2024 at midnight GMT. \
+User accrued MOR is available to claim after May 8th, 2024 at midnight GMT.
 
 
 4. Compute Tranche (Pool 3) \
@@ -122,7 +119,7 @@ User accrued MOR is available to claim after May 8th, 2024 at midnight GMT. \
 Pool 3 started February 8th, 2024 at midnight GMT.  \
 It mints 3,456 MOR every 24 hours to the compute tranche. \
 Minting amount decreases by [0.59255872824](https://etherscan.io/unitconverter?wei=592558728240000000) MOR every 24 hours. \
-Providers can claim up to 1% of the compute tranche every 24 hours starting after May 8th, 2024 at midnight GMT. \
+Providers can claim up to 1% of the compute tranche every 24 hours starting after May 8th, 2024 at midnight GMT.
 
 
 5. Protection Tranche (Pool 4) \
@@ -148,7 +145,7 @@ The layer 1 sender contract facilitates the bridging of tokens and messages to t
 ### Layer 2 Contracts
 
 #### **Ecosystem Registry**
-Same as the layer 1 ecosystem registry, the layer 2 ecosystem registry is a reference list of all official Morpherus contracts deployed on that blockchain as well as a list of ecosystem registries deployed on other blockchains.
+Same as the layer 1 ecosystem registry, the layer 2 ecosystem registry is a reference list of all official us contracts deployed on that blockchain as well as a list of ecosystem registries deployed on other blockchains.
 
 #### **Layer 2 Minter**
 The layer 2 minter contract owns the Morpheus Token (MOR) contract and is responsible for receiving messages from the layer 1 sender contract and executing the minting of MOR based on those messages.
@@ -159,25 +156,25 @@ The layer 2 minter contract owns the Morpheus Token (MOR) contract and is respon
 [https://arbiscan.io/address/0xd4a8ECcBe696295e68572A98b1aA70Aa9277d427](https://arbiscan.io/address/0xd4a8ECcBe696295e68572A98b1aA70Aa9277d427)
 
 #### **Morpheus Token (MOR)**
-The MOR contract is a standard ERC20 token contract deployed on Arbitrum.
+The MOROFT contract is a cross-chain ERC20 token.
 
-<i>"MOR.sol, the Morpheus token, is an OpenZeppelin ERC20 implementation that extends the ERC20Capped and ERC20Burnable extensions.
+<i>"MOROFT.sol, the Morpheus token, is a [LayerZero Omnichain Fungible Token](https://docs.layerzero.network/v2/developers/evm/oft/quickstart) (OFT). This allows the token to be transferred across [supported networks](https://docs.layerzero.network/v2/developers/evm/technical-reference/endpoints) such as Ethereum, Arbitrum, BNB Chain, and others without the need for wrapping. 
 
-New tokens can only be minted by the contract owner – [L2MessageReceiver](https://github.com/MorpheusAIs/Docs/blob/main/Smart%20Contracts/L2MessageReceiver.md) – up to the immutable cap of 42,000,000 tokens."</i><sup>4</sup>
+Tokens can only be minted by the immutable `minter_` – [`L2MessageReceiver`](L2MessageReceiver.md) – when claimed by users."</i><sup>4</sup>
 
-[https://github.com/MorpheusAIs/SmartContracts/blob/main/contracts/MOR.sol](https://github.com/MorpheusAIs/SmartContracts/blob/main/contracts/MOR.sol) \
-[https://arbiscan.io/address/0x7431ada8a591c955a994a21710752ef9b882b8e3](https://arbiscan.io/address/0x7431ada8a591c955a994a21710752ef9b882b8e3)
+[https://github.com/MorpheusAIs/SmartContracts/blob/main/contracts/MOROFT.sol](https://github.com/MorpheusAIs/SmartContracts/blob/main/contracts/MOROFT.sol)
 
 #### **Layer 2 Capital**
 
 The layer 2 capital contract is the receiver of the capital yield earned by tokens locked in the distribution contract and sent by the layer 1 sender contract.
 
-<i>"L2TokenReceiver.sol is a component of the Techno Capital Machine. It is responsible for receiving wstETH yield from [L1Sender](https://github.com/MorpheusAIs/Docs/blob/main/Smart%20Contracts/L1Sender.md) via the native Arbitrum bridge and managing Protocol-Owned Liquidity.
+<i>"L2TokenReceiverV2.sol is a component of the Techno Capital Machine. It is responsible for receiving wstETH yield from[L1Sender](https://github.com/MorpheusAIs/Docs/blob/main/Smart%20Contracts/L1Sender.md) via the native Arbitrum bridge and managing Protocol-Owned Liquidity.
 
-All functions on L2TokenReceiver can only be called by the contract owner – the Morpheus multisig."</i> <sup>5</sup>
+The contract supports swapping tokens with the swap method through Uniswap V3 for either of two token pairs specified in firstSwapParams and secondSwapParams. The former is used to swap bridged wstETH yield for WETH. The latter is used to swap half of the resulting WETH for MOR. In turn, additional liquidity for the MOR/WETH pair is provisioned using the increaseLiquidityCurrentRange method.
 
-[https://github.com/MorpheusAIs/SmartContracts/blob/main/contracts/L2TokenReceiver.sol](https://github.com/MorpheusAIs/SmartContracts/blob/main/contracts/L2TokenReceiver.sol) \
-[https://arbiscan.io/address/0x47176B2Af9885dC6C4575d4eFd63895f7Aaa4790](https://arbiscan.io/address/0x47176B2Af9885dC6C4575d4eFd63895f7Aaa4790)
+All functions on L2TokenReceiverV2 can only be called by the contract owner – the Morpheus multisig."</i> <sup>5</sup>
+
+[https://github.com/MorpheusAIs/SmartContracts/blob/main/contracts/L2TokenReceiverV2.sol](https://github.com/MorpheusAIs/SmartContracts/blob/main/contracts/L2TokenReceiverV2.sol)
 
 #### **Provider Registry**
 
@@ -187,7 +184,7 @@ The provider registry contract is a list of providers and their designated TCP/I
 
 | Name | Type | Description |
 |---|---|---|
-| Provider | struct | Complex object containing provider variables.<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string) Endpoint,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(string) Port,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(uint) Stake,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(uint) RegTimestamp<br>} |
+| Provider | struct | Complex object containing provider variables.<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string) Endpoint,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(string) Port,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(uint) Stake,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(uint) RegTimestamp,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(bool) IsDeleted<br>} |
 | ProviderIds | address[] | Array of registered provider addresses. |
 | Providers | mapping | Mapping of registered providers. (address => Provider) |
 | Stake | uint256  | Minimum required stake to register a new provider. |
@@ -202,7 +199,7 @@ The provider registry contract is a list of providers and their designated TCP/I
 | getProviderList | none | Returns an array of registered providers. |
 | getStakeReq | none | Returns an uint256 of required MOR stake to register. |
 | registerProvider | IP (string),<br>Port (uint) | Receives the stake & adds a provider to the registry lists. |
-| unregisterProvider | none | Sends the stake & removes a provider from registry lists. |
+| unregisterProvider | none | Sends the stake, marks provider as deleted, & removes the provider from the active list. |
 | updateProvider | IP (string),<br>Port (uint) | Updates the mapped provider objects with new values. |
 | setProviderStakeReq | uint256 | Updates the minimum stake requirement. |
 | transferOwnership | address | Transfers the ownership of the contract to a new address. |
@@ -216,7 +213,7 @@ The model registry contract is a list of LLM models available on the Morpheus ne
 
 | Name | Type | Description |
 |---|---|---|
-| Model | struct | Complex object containing model variables.<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(address) Owner,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(string) UUID,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(string) Name,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(string) IPFS,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(string[]) Tags,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(uint256) RoyaltyFee,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(uint256) Stake,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(uint256) RegTimestamp<br>} |
+| Model | struct | Complex object containing model variables.<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(address) Owner,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(string) UUID,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(string) Name,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(string) IPFS,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(string[]) Tags,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(uint256) RoyaltyFee,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(uint256) Stake,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(uint256) RegTimestamp,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(bool) IsDeleted<br>} |
 | ModelIds | string[] | A string array of model UUIDs. |
 | Models | mapping | Mapping of registered models by UUID. (string => Model) |
 | Tags | string[] | A string array of available tags. |
@@ -235,7 +232,7 @@ The model registry contract is a list of LLM models available on the Morpheus ne
 | getModelsByType | Type (string) | Returns an array of Model objects filtered by given type. |
 | getStakeReq | none | Returns an uint256 of required MOR stake to register. |
 | registerModel | UUID (string),<br>Name (string),<br>IPFS (string),<br>Tags (string[]),<br>RoyaltyFee (uint256) | Receives the stake & adds a model to the registry lists. |
-| unregisterModel | none | Sends the stake & removes a model from registry lists. |
+| unregisterModel | none | Sends the stake, marks the model as deleted, & removes the model from the active list. |
 | updateModel | UUID (string),<br>Name (string),<br>IPFS (string),<br>Tags (string[]),<br>RoyaltyFee (uint256) | Updates the mapped model objects with new values. |
 | setModelStakeReq | uint256 | Updates the minimum stake requirement. |
 | transferOwnership | address | Transfers the ownership of the contract to a new address. |
@@ -243,13 +240,15 @@ The model registry contract is a list of LLM models available on the Morpheus ne
 
 #### Agent Registry
 
+An agent is a program that operates within a digital environment, using data inputs to make autonomous decisions or perform actions to achieve designated objectives. It processes information, evaluates options, and executes tasks based on predefined algorithms and learning mechanisms, such as machine learning, to improve its efficacy and adapt to new situations without human intervention.
+<br>
 The agent registry contract is a list of registered AI agents available for use on the Morpheus network and their corresponding IPFS location.
 
 ##### Variables
 
 | Name | Type | Description |
 |---|---|---|
-| Agent | struct | Complex object containing Agent variables.<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(address) Owner,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(string) UUID,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(string) Name,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(string) IPFS,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(string[]) Tags,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(uint256) RoyaltyFee,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(uint) Stake,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(uint) RegTimestamp<br>} |
+| Agent | struct | Complex object containing Agent variables.<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(address) Owner,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(string) UUID,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(string) Name,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(string) IPFS,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(string[]) Tags,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(uint256) RoyaltyFee,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(uint) Stake,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(uint) RegTimestamp,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(bool) IsDeleted<br>} |
 | AgentIds | string[] | A string array of agent UUIDs. |
 | Agents | mapping | Mapping of registered agents by UUID. (string => Agent) |
 | Tags | string[] | A string array of available tags. |
@@ -268,7 +267,7 @@ The agent registry contract is a list of registered AI agents available for use 
 | getAgentsByType | Type (string) | Returns an array of Agent objects filtered by given type. |
 | getStakeReq | none | Returns an uint256 of required MOR stake to register. |
 | registerAgent | UUID (string),<br>Name (string),<br>IPFS (string),<br>Tags (string[]),<br>RoyaltyFee (uint256) | Receives the stake & adds an agent to the registry lists. |
-| unregisterAgent | none | Sends the stake & removes an agent from registry lists. |
+| unregisterAgent | none | Sends the stake, marks the agent as deleted, & removes the agent from the active list. |
 | updateAgent | UUID (string),<br>Name (string),<br>IPFS (string),<br>Tags (string[]),<br>RoyaltyFee (uint256) | Updates the mapped agent objects with new values. |
 | setAgentStakeReq | uint256 | Updates the minimum stake requirement. |
 | transferOwnership | address | Transfers the ownership of the contract to a new address. |
@@ -284,11 +283,12 @@ The marketplace contract collects model price information from providers and act
 |---|---|---|
 | Bid | struct | Complex object containing bid variables.<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(address) Provider,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(string) UUID,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(uint256) Nonce,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(uint256) BidAmount,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(uint) CreatedTimestamp<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(uint) DeletedTimestamp<br>} |
 | Bids | mapping | A mapping of Bid arrays by Provider + UUID + Nonce. (string => Bid[]) |
-| Providers | mapping | A mapping of Provider arrays by UUID. (string => Address[]) |
+| BidNonces | mapping | A mapping of latest nonces by Provider + UUID. (string => uint256) |
+| ModelProviders | mapping | A mapping of Provider arrays by UUID. (string => Address[]) |
 | ProviderModels | mapping | A mapping of Model UUIDs by Provider. (address => string[]) |
 | ProviderAgents | mapping | A mapping of Agent UUIDs by Provider. (address => string[]) |
-| ModelFee | uint256 | Marketplace bid fee to post a new model. |
-| AgentFee | uint256 | Marketplace bid fee to post a new agent. |
+| ModelFee | uint256 | Marketplace MOR bid fee to post a new model bid. |
+| AgentFee | uint256 | Marketplace MOR bid fee to post a new agent bid. |
 | Owner | address | The owner of the contract. |
 
 ##### Functions
@@ -298,45 +298,46 @@ The marketplace contract collects model price information from providers and act
 | getBids | UUID (string) | Returns list of Bid objects. |
 | getModelsByProvider | Addr (address) | Returns a list of model bids filtered by provider address. |
 | getAgentsByProvider | Addr (address) | Returns a list of agent bids filtered by provider address. |
-| postModelBid | UUID (string),<br>BidAmount (uint256),<br>Nonce (uint256) | Adds new Bid object to Bids mapping.<br>Adds new UUID to ProviderModels provider mapping. |
-| postAgentBid | UUID (string),<br>BidAmount (uint256),<br>Nonce (uint256) | Adds new Bid object to Bids mapping.<br>Adds new UUID to ProviderAgents provider mapping. |
-| deleteModelBid | UUID (string),<br>Nonce (uint256) | Removes Bid object from Bids mapping.<br>Removes UUID from ProviderModels provider mapping. |
-| deleteAgentBid | UUID (string),<br>Nonce (uint256) | Removes Bid object from Bids mapping.<br>Removes UUID from ProviderAgents provider mapping. |
-| updateModelBid | UUID (string),<br>BidAmount (uint256),<br>Nonce (uint256) | Runs deleteModelBid with UUID.<br>Runs addModelBid with UUID, BidAmount, & Nonce. |
-| updateAgentBid | UUID (string),<br>BidAmount (uint256),<br>Nonce (uint256) | Runs deleteAgentBid with UUID.<br>Runs addAgentBid with UUID, BidAmount, & Nonce. |
-| setModelBidFee | uint256 | Update the fee for posting a new model bid. |
-| setAgentBidFee | uint256 | Update the fee for posting a new agent bid. |
-| transferOwnership | address | Transfers the ownership of the contract to a new address. |
+| postModelBid | Provider (address),<br>UUID (string),<br>BidAmount (uint256),<br>Nonce (uint256) | IF not owner THEN Provider should match sender address.<br>Checks Provider registry & Model Registry.<br><br>IF previous nonce bid is deleted or does not exist:<br>Adds new UUID to ProviderModels provider  mapping.<br>Adds new Provider address to ModelProviders mapping.<br>Adds new Bid object to Bids mapping.<br>Adds DeletedTimestamp to previous bid if exists. |
+| postAgentBid | Provider (address),<br>UUID (string),<br>BidAmount (uint256),<br>Nonce (uint256) | IF not owner THEN Provider should match sender address.<br>Checks Provider registry & Agent Registry.<br><br>IF previous nonce bid is deleted or does not exist:<br>Adds new UUID to ProviderAgents provider  mapping.<br>Adds new Provider address to ModelProviders mapping.<br>Adds new Bid object to Bids mapping.<br>Adds DeletedTimestamp to previous bid if exists. |
+| deleteModelBid | Provider (address),<br>UUID (string),<br>Nonce (uint256) | IF not owner THEN Provider should match sender address.<br><br>Update Bid object with DeletedTimestamp.<br>Removes UUID from ProviderModels provider mapping.<br>Removes Provider from Providers mapping. |
+| deleteAgentBid | Provider (address),<br>UUID (string),<br>Nonce (uint256) | IF not owner THEN Provider should match sender address.<br><br>Update Bid object with DeletedTimestamp.<br>Removes UUID from ProviderAgents provider mapping.<br>Removes Provider from Providers mapping. |
+| setModelBidFee<br>(owner only) | Fee (uint256) | Update the MOR fee for posting a new model bid. |
+| setAgentBidFee<br>(owner only) | Fee (uint256) | Update the MOR fee for posting a new agent bid. |
+| transferBidFees<br>(owner only) | Amt (uint256),<br>Address (address) | Transfer MOR bid fee balance to address. |
+| transferOwnership<br>(owner only) | address | Transfers the ownership of the contract to a new address. |
 | getOwner | none | Returns the current owner of the contract. |
 
 #### **Session Router**
 
-The session router contract is responsible for maintaining an active log of current of past user sessions. Session closeout data can be used to generate a reputation score for a provider, model, and agent. Imports data from Provider Registry, Model Registry, Agent Registry, and MOR Token contracts.
+The session router contract is responsible for maintaining an active log of current of past user sessions. Session closeout data can be used to generate a reputation score for a provider, model, and agent. Imports data from Provider Registry, Model Registry, Agent Registry, and MOR Token contracts.<br><br>User stakes MOR token to the Session Router Contract to use their ratio of the daily compute budget. User’s can only unstake MOR in ratio to the compute budget not used.
 
 ##### Variables
 
 | Name | Type | Description |
 |---|---|---|
-| Session | struct | Complex object containing session variables.<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(string) SessionId,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(address) User,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(address) Provider,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(string) UUID,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(uint256) Budget,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(uint256) Refund,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(uint256) Stake,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(string) CloseoutReceipt,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(uint256) CloseoutType,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(uint256) OpenTimestamp,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(uint256) CloseTimestamp<br>} |
+| Session | struct | Complex object containing session variables.<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(string) SessionId,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(address) User,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(address) Provider,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(string) UUID, //Model or Agent UUID<br>(uint256) Price,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(uint256) Budget,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(uint256) Refund,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(string) CloseoutReceipt,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(uint256) CloseoutType,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(uint256) OpenTimestamp,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(uint256) CloseTimestamp<br>} |
 | Sessions | mapping | A mapping of Sessions by SessionId. (string => Session) |
 | ProviderSessions | mapping | A mapping of SessionIds by Provider. (address => string[]) |
 | UserSessions | mapping | A mapping of SessionIds by User. (address => string[]) |
-| StakeDelay | uint256 | Number of seconds to delay the stake return when a user closes out a session using a user signed receipt. |
+| UserStakes | mapping| A mapping of stake amounts by User. (address => uint) |
 | Owner | address | The owner of the contract. |
 
 ##### Functions
 
 | Name | Parameters | Description |
 |---|---|---|
-| openSession | Provider (address),<br>UUID (string),<br>Budget (uint256) | Receives the session stake and creates a Session object.<br>Returns SessionId string. |
+| openSession | BidId (string),<br>Budget (uint256) | Receives the session stake and creates a Session object.<br>Returns SessionId string. Open and Close timestamps are set according to bid and budget.<br><br>BidId is the hash of Provider Address + UUID + Nonce. |
+| UpdateSession | BidId (string),<br>Budget (uint256) | Receives the updated session stake difference and updates the Session object with new budget and new close timestamp.<br><br>Updated budget cannot be less than the used budget based on the start timestamp. |
 | closeSession | SessionId (string),<br>Receipt (string),<br>Signature (string) | Processes session closeout and returns session stake.<br>Add MOR payout to the provider’s claimable balance.<br>Return unused budget (refund) to the user balance.<br>Uses signature to determine if the "CloseoutType" is a provider signed or user signed report. |
 | getClaimBalance | Addr (address) | Returns claimable balance by provider address. |
-| getSpendBalance | Addr (address) | Returns spendable balance by user address. |
-| getTodaysBudget | none | Returns today's MOR  budget. |
+| getSpendBalance | Addr (address) | Returns spendable balance by user address.<br><br>(1% of Compute Balance) * ((Addr MOR Balance)/(MOR Minted)) - (Today’s active session spend) - (Today’s closed session budget - refund) |
+| getTodaysBudget | none | Returns today's MOR  budget.<br><br>(1% of Compute Balance) |
 | getComputeTranche | none | Returns total MOR in Compute Tranche |
 | claimAmount | Amt (uint256) | Withdraws MOR from the provider’s claimable balance. |
 | deleteHistory | SessionId (string),<br>Index (uint) | Removes SessionId from UserSessions array.<br>Clears User address field in Session record. |
-| updateStakeDelay | StakeDelay (uint256) | Updates the number of seconds a stake is delayed when a user closes out a session using a user signed receipt. |
+| stake | Amt (uint256) | Add to User stake balance in UserStakes mapping. |
+| unstake | Amt (uint256) | Subtracts from User stake balance in UserStakes mapping. |
 | transferOwnership | address | Transfers the ownership of the contract to a new address. |
 | getOwner | none | Returns the current owner of the contract. |
 
@@ -391,7 +392,7 @@ The default Morpheus UI is a client-side application built using Electron, Node.
 <img src="/Graphics/Docs%20Graphics/English/Morpheus%20Lumerin%20Model/figure3.png">
 <i>Figure 3. Proposed wallet UI mockup</i>
 
-The Morpherus node API bus exposes a consumable API that any permissioned UI can access. The node may even be run as a daemon service on a central web server to provide Morpheus network access to web and mobile apps.
+The Morpheus node API bus exposes a consumable API that any permissioned UI can access. The node may even be run as a daemon service on a central web server to provide Morpheus network access to web and mobile apps.
 
 #### Proxy Router
 
@@ -501,7 +502,7 @@ The Morpheus Protocol is essentially the language and pattern that the Morpheus 
     | Parameter (string) | "signature" | Provider signed message. {report} |
    
     The session report will be a summary of the User node session socket activity.<br><br>
-    <i>{ "sessionid": "0x…", "start": 1707379200, "end": 1707456732, "prompts": 3, "tokens": 1650, "reqs": [ { "req": 1707379250, "res": 1707379425, "toks": 620 }, { "req": 1707399127, "res": 1707400563, "toks": 426 }, { "req": 1707450734, "res": 1707455732, "toks": 604} ] }</i>
+    <i>{ "sessionid": "0x…", "start": 1707379200, "end": 1707456732, "prompts": 3, "tokens": 1650, "avgtps": "15" }</i>
     
     ##### Report Variables
 
@@ -512,15 +513,7 @@ The Morpheus Protocol is essentially the language and pattern that the Morpheus 
     | "end" | uint | Timestamp marking end of the session socket. |
     | "prompts" | uint | Number of prompts sent by the User node and received by the Provider node. |
     | "tokens" | uint | Number of language tokens sent from the Provider node to the User node. |
-    | "reqs" | array | An array of req objects. |
-   
-    ##### Req Object Variables
-   
-    | Name | Type | Description |
-    |---|---|---|
-    | "req" | unit | Timestamp of prompt request message. |
-    | "res" | uint | Timestamp of inference response message. |
-    | "toks" | uint | Number of language tokens provided in the inference response. |
+    | "avgtps" | uint | An average of the requests made during the session measured in Tokens per second. |
    
     c. Provider closes the socket and purges session data from memory.
 
@@ -617,7 +610,7 @@ When a User node first establishes a tcp/ip socket connection with a provider no
 
 ## Conclusion
 
-The Morpheus Lumerin Model is a simple yet dynamic architecture that allows for maximum scalability and decentralization. Key attack vectors are mitigated using a combination of staking and reputation mechanics.<br><br>The on-chain architecture can initially be deployed on any EVM chain. Eventually the solidity code will be ported into other ecosystems for greater reach.
+The Morpheus Lumerin Model is a simple yet dynamic architecture that allows for maximum scalability and decentralization. Key attack vectors are mitigated using a combination of staking and reputation mechanics.<br><br>The on-chain architecture can initially be deployed on any EVM chain. Eventually the Solidity code will be ported into other ecosystems for greater reach.
 
 #### References
 
@@ -627,8 +620,8 @@ The Morpheus Lumerin Model is a simple yet dynamic architecture that allows for 
 
 3. [https://github.com/MorpheusAIs/Docs/blob/main/Smart%20Contracts/L2MessageReceiver.md](https://github.com/MorpheusAIs/Docs/blob/main/Smart%20Contracts/L2MessageReceiver.md)
 
-4. [https://github.com/MorpheusAIs/Docs/blob/main/Smart%20Contracts/MOR.md](https://github.com/MorpheusAIs/Docs/blob/main/Smart%20Contracts/MOR.md)
+4. [https://github.com/MorpheusAIs/Docs/blob/main/Smart%20Contracts/MOROFT.md](https://github.com/MorpheusAIs/Docs/blob/main/Smart%20Contracts/MOROFT.md)
 
-5. [https://github.com/MorpheusAIs/Docs/blob/main/Smart%20Contracts/L2TokenReceiver.md](https://github.com/MorpheusAIs/Docs/blob/main/Smart%20Contracts/L2TokenReceiver.md)
+5. [https://github.com/MorpheusAIs/Docs/blob/main/Smart%20Contracts/L2TokenReceiverV2.md](https://github.com/MorpheusAIs/Docs/blob/main/Smart%20Contracts/L2TokenReceiverV2.md)
 
 6. [https://platform.openai.com/docs/api-reference/introduction](https://platform.openai.com/docs/api-reference/introduction)
